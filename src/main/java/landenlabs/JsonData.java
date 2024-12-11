@@ -31,9 +31,9 @@ public class JsonData {
             Object obj = base;
             for (String part : parts) {
                 Map<String, Object> mapLevel = (Map<String, Object>) obj;
-                obj = mapLevel.get(part);
+                obj = "*".equals(part) ? mapLevel.values().iterator().next() : mapLevel.get(part);
             }
-            return ((TT)obj);
+            return (obj != null) ? ((TT)obj) : defValue;
         } catch (Exception ignore) {
         }
         return defValue;
