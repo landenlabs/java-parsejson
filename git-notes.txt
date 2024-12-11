@@ -1,6 +1,12 @@
-git init
-git remote add origin https://landenlabs@github.com/landenlabs/java-parseJson.git
 
+git init
 git add .
-git commit -m "first commit"
-git push --set-upstream origin main
+git commit -m "first post"
+git branch -M main
+
+# one of these
+git remote add origin https://landenlabs@github.com/landenlabs/java-parseJson.git
+git remote add origin https://landenlabs2@github.com/landenlabs/java-parseJson.git
+git remote add origin https://github.com/landenlabs/java-parseJson.git
+
+git push -u origin main
