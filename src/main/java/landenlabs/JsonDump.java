@@ -58,10 +58,11 @@ public class JsonDump {
             outLn(value);
         else if (value instanceof Boolean) {
             outLn(value);
-        } else if (value instanceof ArrayList<?> arrValue) {
+        } else if (value.getClass().getSimpleName().startsWith("ArrayList") ) {
             outLn();
             dumpName("[", level);
             String sep = "";
+            ArrayList<Object> arrValue = (ArrayList<Object>)value;
             for (Object item : arrValue) {
                 out(sep);
                 dumpName("", level+1);

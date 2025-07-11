@@ -22,7 +22,7 @@ public class Main {
           Test1.test();
       } else {
           try {
-              String json = Files.readString(Paths.get(args[0]));
+              String json = new String(Files.readAllBytes(Paths.get(args[0])));
               JsonReader reader = new JsonReader(json, true);
               JsonDump.dump(reader.data);
           } catch (Exception ex) {
